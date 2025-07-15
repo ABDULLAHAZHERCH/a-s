@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+import { Toaster } from "sonner";
+import { ThemeProvider } from "@/components/theme-provider"
+import { GeistSans } from "geist/font/sans";
+import SmoothScroll from "@/components/SmoothScroll";
 
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Abdullah & Shahmir",
@@ -15,8 +19,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={GeistSans.className} suppressHydrationWarning>
+      <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <SmoothScroll>
+            <Navbar />
+            <main className="flex-grow pt-14">{children}</main>
+            <Footer />
+            <Toaster />
+          </SmoothScroll>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
