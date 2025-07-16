@@ -57,7 +57,7 @@ export default function ContactPage() {
             Get in Touch
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">
-            We're excited to hear about your project. Fill out the form below,
+            We are excited to hear about your project. Fill out the form below,
             and we'll contact you shortly.
           </p>
         </div>
@@ -69,7 +69,7 @@ export default function ContactPage() {
             <Label htmlFor="name">Full Name</Label>
             <Input
               id="name"
-              placeholder="Abdullah Azher"
+              placeholder="Your Name"
               required
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -80,7 +80,7 @@ export default function ContactPage() {
             <Input
               id="email"
               type="email"
-              placeholder="name@example.com"
+              placeholder="email@example.com"
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}

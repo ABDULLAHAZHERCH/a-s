@@ -34,14 +34,12 @@ export default function AboutPage() {
       <FadeIn>
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-            We're the Team Behind the Code
+            Our Team
           </h1>
           <p className="mt-6 text-lg text-muted-foreground">
-            We met as final-year Computer Science students at the University of
-            Engineering and Technology, Lahore, united by a shared passion for
-            building things that solve real-world problems. A&S was born from
-            late-night coding sessions and a desire to bring modern, efficient
-            software solutions to businesses without the corporate overhead.
+            We founded A&S as Computer Science students at UET Lahore, driven by
+            a passion for building impactful solutions. Our mission is to
+            deliver modern, efficient software—without the corporate bloat.
           </p>
         </div>
       </FadeIn>

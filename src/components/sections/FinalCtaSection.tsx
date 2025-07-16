@@ -9,10 +9,10 @@ export default function FinalCtaSection() {
         <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
           <div className="space-y-3">
             <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
-              Have an Idea? Let's Build It Together.
+              Have an Idea? Let&apos;s Build It Together.
             </h2>
             <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Let’s build something remarkable - your vision, our expertise. Book your consultation now.
+              Let&apos;s build something remarkable - your vision, our expertise. Book your consultation now.
             </p>
           </div>
           <div className="mx-auto w-full max-w-sm space-y-2">

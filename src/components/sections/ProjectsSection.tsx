@@ -37,8 +37,8 @@ export default function ProjectsSection() {
               Our Innovative Projects
             </h2>
             <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-              Here's a glimpse of what we've built. We're proud of the problems
-              we've solved.
+              Here a glimpse of what we&apos;ve built. We&apos;re proud of the problems
+              we&apos;ve solved.
             </p>
           </div>
         </FadeIn>

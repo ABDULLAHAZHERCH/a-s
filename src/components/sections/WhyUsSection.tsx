@@ -32,7 +32,7 @@ export default function WhyUsSection() {
               Your Advantage with A&S
             </h2>
             <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-              We're more than just coders. We're your dedicated technical
+              We&apos;re more than just coders. We&apos;re your dedicated technical
               partners.
             </p>
           </div>
