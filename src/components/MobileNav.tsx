@@ -42,23 +42,28 @@ export function MobileNav() {
               <Link
                 href="/#services"
                 className="text-2xl font-medium hover:text-primary"
+                onClick={() => setIsOpen(false)}
               >
                 Services
               </Link>
               <Link
                 href="/#projects"
                 className="text-2xl font-medium hover:text-primary"
+                onClick={() => setIsOpen(false)}
               >
                 Projects
               </Link>
               <Link
                 href="/about"
                 className="text-2xl font-medium hover:text-primary"
+                onClick={() => setIsOpen(false)}
               >
                 About
               </Link>
               <Button asChild size="lg" className="w-full mt-8">
-                <Link href="/contact">Contact Us</Link>
+                <Link href="/contact" onClick={() => setIsOpen(false)}>
+                  Contact Us
+                </Link>
               </Button>
             </nav>
           </div>

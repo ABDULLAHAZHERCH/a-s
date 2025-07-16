@@ -9,6 +9,7 @@ export interface Project {
     problem: string;
     solution: string;
     techStack: string[];
+    isFeatured?: boolean; 
   }
   
   // ACTION REQUIRED: Fill this array with your actual project details.
@@ -21,7 +22,8 @@ export interface Project {
       liveDemoUrl: 'https://your-live-demo-link.com',
       problem: "Creative agencies were struggling with messy email chains and disorganized feedback for client approvals. This led to delays, miscommunication, and frustration on both sides.",
       solution: "We built ProjectFlow, a centralized web application where agencies can upload their work, invite clients to comment directly on the visuals, and track approval status in real-time. This created a single source of truth and streamlined the entire feedback loop.",
-      techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Firebase', 'Stripe API', 'Vercel']
+      techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Firebase', 'Stripe API', 'Vercel'],
+      isFeatured: true,
     },
     {
       slug: 'another-project',

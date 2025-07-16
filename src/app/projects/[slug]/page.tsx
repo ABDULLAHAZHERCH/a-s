@@ -67,7 +67,7 @@ export default async function ProjectCaseStudyPage({
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
             {project.title}
           </h1>
-          <p className="mt-4 text-lg text-muted-foreground">
+          <p className="mt-4 text-lg text-muted-foreground mx-auto max-w-2xl text-center">
             {project.tagline}
           </p>
           {project.liveDemoUrl && (
