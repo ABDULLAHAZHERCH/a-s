@@ -58,7 +58,7 @@ export default function ContactPage() {
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">
             We are excited to hear about your project. Fill out the form below,
-            and we'll contact you shortly.
+            and we&apos;ll contact you shortly.
           </p>
         </div>
       </FadeIn>
