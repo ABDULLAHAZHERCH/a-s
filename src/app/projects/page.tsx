@@ -27,8 +27,8 @@ export default function AllProjectsPage() {
             Our Work
           </h1>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-            From powerful SaaS platforms to slick marketing sites, here's a
-            comprehensive look at the problems we've solved.
+            From powerful SaaS platforms to slick marketing sites, here is a
+            comprehensive look at the problems we&apos;ve solved.
           </p>
         </div>
       </FadeIn>
