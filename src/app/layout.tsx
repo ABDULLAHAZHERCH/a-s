@@ -3,10 +3,9 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Toaster } from "sonner";
-import { ThemeProvider } from "@/components/theme-provider"
+import { ThemeProvider } from "@/components/theme-provider";
 import { GeistSans } from "geist/font/sans";
 import SmoothScroll from "@/components/SmoothScroll";
-
 
 export const metadata: Metadata = {
   title: "Abdullah & Shahmir",

@@ -35,8 +35,7 @@ export default function AllProjectsPage() {
 
       <div className="mx-auto grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, index) => (
-          <FadeIn key={index} delay={0.1 * (index + 1)}>
-            {/* --- THE FIX IS ON THIS LINE --- */}
+          <FadeIn key={project.slug} delay={0.1 * (index + 1)}>
             <Card className="h-full flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
               <CardHeader className="p-0">
                 <Image

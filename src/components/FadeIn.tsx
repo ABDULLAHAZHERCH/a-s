@@ -1,9 +1,9 @@
 // src/components/FadeIn.tsx
 "use client";
 
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import React from "react";
 
 interface FadeInProps {
   children: React.ReactNode;
@@ -12,11 +12,26 @@ interface FadeInProps {
 }
 
 export function FadeIn({ children, className, delay = 0 }: FadeInProps) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [shouldAnimate, setShouldAnimate] = useState(false);
+
+  useEffect(() => {
+    if (!ref.current) return;
+    const rect = ref.current.getBoundingClientRect();
+    const inView =
+      rect.top < window.innerHeight && rect.bottom > 0;
+    if (inView) {
+      setShouldAnimate(true);
+    }
+  }, []);
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }} // Start invisible and 20px down
-      whileInView={{ opacity: 1, y: 0 }} // Animate to visible and original position
-      viewport={{ once: true, margin: "-50px" }} // Trigger animation when element is 50px into the viewport, and only once
+      ref={ref}
+      initial={{ opacity: 0, y: 20 }}
+      animate={shouldAnimate ? { opacity: 1, y: 0 } : undefined}
+      whileInView={!shouldAnimate ? { opacity: 1, y: 0 } : undefined}
+      viewport={!shouldAnimate ? { once: true, margin: "-50px" } : undefined}
       transition={{
         duration: 0.5,
         delay: delay,

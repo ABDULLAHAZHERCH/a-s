@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./theme-toggle";
 import { MobileNav } from "./MobileNav";
+import { usePathname, useRouter } from "next/navigation";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -20,6 +21,22 @@ export function Navbar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const handleScroll = (id: string) => {
+    if (pathname !== "/") {
+      // Navigate to homepage with hash
+      router.push(`/#${id}`);
+    } else {
+      // Already on homepage, smooth scroll
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
 
   return (
     <header
@@ -37,18 +54,12 @@ export function Navbar() {
 
         {/* --- Desktop Navigation (Hidden on mobile) --- */}
         <nav className="hidden md:flex items-center gap-4 sm:gap-6">
-          <Link
-            href="/#services"
-            className="text-sm font-medium hover:underline underline-offset-4"
-          >
+          <button onClick={() => handleScroll("services")} className="text-sm font-medium hover:underline underline-offset-4">
             Services
-          </Link>
-          <Link
-            href="/#projects"
-            className="text-sm font-medium hover:underline underline-offset-4"
-          >
+          </button>
+          <button onClick={() => handleScroll("projects")} className="text-sm font-medium hover:underline underline-offset-4">
             Projects
-          </Link>
+          </button>
           <Link
             href="/about"
             className="text-sm font-medium hover:underline underline-offset-4"
