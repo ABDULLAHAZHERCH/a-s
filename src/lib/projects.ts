@@ -5,7 +5,7 @@ export interface Project {
     title: string;
     tagline: string;
     imageUrl: string;
-    liveDemoUrl?: string; // Optional link to a live demo
+    liveDemoUrl?: string; 
     problem: string;
     solution: string;
     techStack: string[];
@@ -15,24 +15,14 @@ export interface Project {
   // ACTION REQUIRED: Fill this array with your actual project details.
   export const projects: Project[] = [
     {
-      slug: 'projectflow',
-      title: 'ProjectFlow: SaaS for Creative Agencies',
-      tagline: 'A comprehensive platform for managing client feedback and project timelines.',
-      imageUrl: '/project-showcase.png', // Main image for the case study
-      liveDemoUrl: 'https://your-live-demo-link.com',
-      problem: "Creative agencies were struggling with messy email chains and disorganized feedback for client approvals. This led to delays, miscommunication, and frustration on both sides.",
-      solution: "We built ProjectFlow, a centralized web application where agencies can upload their work, invite clients to comment directly on the visuals, and track approval status in real-time. This created a single source of truth and streamlined the entire feedback loop.",
-      techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Firebase', 'Stripe API', 'Vercel'],
+      slug: 'testimonial-wall',
+      title: 'Testimonial Wall: Showcase Client Love with Ease',
+      tagline: 'A modern testimonial collection and display platform for businesses and creators.',
+      imageUrl: '/testimonial.png',
+      liveDemoUrl: 'https://testimonial-wall.vercel.app',
+      problem: "Many businesses struggle to showcase social proof effectively. Collecting, organizing, and displaying testimonials from clients or users can be time-consuming, fragmented, and visually inconsistent.",
+      solution: "We created Testimonial Wall, a sleek, responsive platform that lets users easily collect and publish testimonials in a beautiful grid layout. It supports embeddable widgets, easy moderation, and customizable branding, giving businesses a trustworthy and professional wall of love. It also features an AI-powered summarizer that automatically condenses long testimonials into concise highlights for better readability and impact.",
+      techStack: ['React', 'Vite', 'JavaScript', 'Express', 'Replit', 'Vercel', 'Supabase', 'Gemini'],
       isFeatured: true,
-    },
-    {
-      slug: 'another-project',
-      title: 'Another Awesome Project',
-      tagline: 'A brief, impactful summary of what this project is.',
-      imageUrl: '/project-showcase.png', // Use a different image for this project
-      problem: "Describe the specific problem this project was designed to solve. What was the pain point for the user or business?",
-      solution: "Describe how your application solved that problem. What are the key features? How does it make the user's life better or the business more efficient?",
-      techStack: ['React', 'Node.js', 'Express', 'MongoDB', 'Heroku']
-    },
-    // Add more project objects here as you complete them
+    },    
   ];

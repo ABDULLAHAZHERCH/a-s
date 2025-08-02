@@ -55,7 +55,7 @@ export default async function ProjectCaseStudyPage({
   return (
     <div className="container mx-auto py-16 px-4">
       <Link
-        href="/#projects"
+        href="/projects"
         className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary mb-8"
       >
         <ArrowLeft className="h-4 w-4" />

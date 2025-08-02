@@ -16,21 +16,48 @@ export function MobileNav() {
     setIsOpen(false);
   }, [pathname]);
 
-  const toggleOpen = () => setIsOpen(!isOpen);
+  // Prevent scrolling of the background when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
+  const toggleOpen = () => setIsOpen((prev) => !prev);
 
   return (
     <div className="md:hidden">
-      {" "}
-      {/* This entire component is hidden on medium screens and up */}
       <Button onClick={toggleOpen} variant="ghost" size="icon">
         <Menu className="h-6 w-6" />
         <span className="sr-only">Open menu</span>
       </Button>
       {isOpen && (
-        <div className="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm animate-in fade-in-20">
-          <div className="fixed left-0 top-0 w-full h-full bg-background z-50 p-6">
+        <div
+          className="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm animate-in fade-in-20"
+          aria-modal="true"
+          role="dialog"
+        >
+          {/* Overlay: clicking/touching outside the menu closes it */}
+          <div
+            className="absolute inset-0"
+            onClick={() => setIsOpen(false)}
+            onTouchStart={() => setIsOpen(false)}
+            style={{ zIndex: 51 }}
+          />
+          {/* Menu panel */}
+          <div
+            className="fixed left-0 top-0 w-full h-full bg-background z-60 p-6"
+            style={{ maxWidth: "100vw", maxHeight: "100vh", overflowY: "auto" }}
+            onClick={(e) => e.stopPropagation()}
+            onTouchStart={(e) => e.stopPropagation()}
+          >
             <div className="flex items-center justify-between mb-8">
-              <Link href="/" className="flex items-center">
+              <Link href="/" className="flex items-center" onClick={() => setIsOpen(false)}>
                 <span className="text-xl font-bold">Abdullah & Shahmir</span>
               </Link>
               <Button onClick={toggleOpen} variant="ghost" size="icon">
